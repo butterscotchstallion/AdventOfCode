@@ -47,14 +47,10 @@ class Solver:
         :param rows:
         :return:
         """
-        # c_1 = Counter()
         c_2 = Counter()
         col_1 = self.get_cols_sorted(rows, 0)
         col_2 = self.get_cols_sorted(rows, 1)
         score = 0
-
-        # for left in col_1:
-        #    c_1[left] += 1
 
         for right in col_2:
             c_2[right] += 1
