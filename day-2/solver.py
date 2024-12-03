@@ -39,11 +39,13 @@ def is_safe(levels: list[int]) -> bool:
                 if is_last_level and num_decreases == 0 and num_increases == 0:
                     return False
 
-    all_increasing = num_increases == num_levels
-    all_decreasing = num_decreases == num_levels
+    # Results in 0
+    # all_increasing = num_increases == num_levels
+    # all_decreasing = num_decreases == num_levels
+    # if all_increasing or all_decreasing:
+    #    return True
 
-    if all_increasing or all_decreasing:
-        return True
+    return True
 
 
 def get_safe_reports_count() -> int:
