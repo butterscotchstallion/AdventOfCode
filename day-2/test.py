@@ -3,7 +3,7 @@ from solver import get_safe_reports_count, is_safe
 
 def test_is_safe():
     # Safe because the levels are all decreasing by 1 or 2.
-    assert is_safe([7, 6, 4, 2, 1])
+    assert is_safe([7, 6, 4, 2, 1]), "Safe because differences are in range"
 
     # Unsafe because 1 3 is increasing but 3 2 is decreasing.
     assert not is_safe([1, 3, 2, 4, 5]), "Unsafe because decreasing"

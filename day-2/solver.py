@@ -40,16 +40,26 @@ def is_safe(levels: list[int]) -> bool:
                     return False
 
     # Results in 0
-    # all_increasing = num_increases == num_levels
-    # all_decreasing = num_decreases == num_levels
-    # if all_increasing or all_decreasing:
-    #    return True
+    all_increasing = num_increases == num_levels
+    all_decreasing = num_decreases == num_levels
 
-    return True
+    if all_increasing or all_decreasing:
+        return True
+
+    # Account for some increases and no decreases
+    if num_increases > 0 and num_decreases == 0:
+        return True
+
+    # Account for some decreases and no increases
+    if num_decreases > 0 and num_increases == 0:
+        return True
+
+    return False
 
 
 def get_safe_reports_count() -> int:
-    reports = Path("./input.txt").read_text().splitlines()
+    reports = Path("input.txt").read_text().splitlines()
+    assert len(reports) == 1000, "Unexpected number of reports"
     num_safe_reports = 0
 
     for report in reports:
