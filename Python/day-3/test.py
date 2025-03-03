@@ -15,6 +15,15 @@ def test_solver_example():
     assert actual == 161
 
 
+def test_solver_example_2():
+    example_input = (
+        "xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))"
+    )
+    actual = get_total_from_pairs(example_input)
+
+    assert actual == 48
+
+
 def test_solver():
     instructions = Path("input.txt").read_text().splitlines()
     total = 0
